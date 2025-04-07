@@ -33,10 +33,19 @@ mySubmitButton.addEventListener("click",(e)=> {
         }
     
     if (myNameTest && myEmailTest){
-        alert("Form submitted successfully!"); // Alerts the user that the form has been submitted successfully
+       // alert("Form submitted successfully!"); // Alerts the user that the form has been submitted successfully
+        document.getElementById("successMessage").innerText = "Form submitted successfully!"; // Displays a success message in the HTML element with id "successMessage"
+        document.getElementById("errorMessage").innerText = ""; // Clears the error message in the HTML element with id "errorMessage"
     }
-    else {
-        alert("Please enter valid name and email.");
+    if (!myEmailTest){
+        console.log("Please enter a valid email address."); // Alerts the user to enter a valid email address{  
+        document.getElementById("errorMessage").innerText = "Please enter a valid email address";
+        document.getElementById("successMessage").innerText = ""; // Clears the success message in the HTML element with id "successMessage"
+
+    }
+    if (!myNameTest){
+        console.log("Please enter a valid name."); // Alerts the user to enter a valid name
+        document.getElementById("errorMessage").innerText += " Please enter a valid name";
+        document.getElementById("successMessage").innerText = ""; // Clears the success message in the HTML element with id "successMessage"
     }
 });
-
