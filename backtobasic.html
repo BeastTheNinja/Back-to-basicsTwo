@@ -2,11 +2,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Basic JavaScript Example">
     <title>Basic javascript</title>
     <link rel="stylesheet" href="assests/css/basic.css">
     <script src="assests/js/basic.js" defer></script>
 </head>
 <body>
-    
+    <h1>Form validering</h1>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+    <div id="error-messeage"></div>
+    <div id="success-messeage"></div>
 </body>
 </html>
