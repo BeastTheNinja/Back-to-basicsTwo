@@ -16,19 +16,27 @@ mySubmitButton.addEventListener("click",(e)=> {
     // Logs the name and email to the console
 
 
-    let myError = document.getElementById("errorMessage")
-    myError.innerHTML = ""; // Clears the error message
+  let myNameTest = false; // Initializes a variable to test the name
+  let myEmailTest = false; // Initializes a variable to test the email
 
+    //vudere navn
     // find ud af om der er indtagt noget i input felterne
-    if (myName.length> 1 && myName.length < 5){
-        // der er ingen fejl i navn{
-        //alt er godt
-        console.log("Name is valid"); 
+    if (myName.length > 1 && myName.length < 5){
+        myNameTest = true; // Sets the name test to true if the name length is between 1 and 5 characters
         }
-        else{
-        // der er en fejl i navn
-        console.log("Name is NOT valid");
+
+
+    //vudere email
+    // regex til at vurdere email
+    if( /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/gim.test(myEmail)){
+        myEmailTest = true; // Sets the email test to true if the email matches the regex pattern 
         }
-     //vudere navn
+    
+    if (myNameTest && myEmailTest){
+        alert("Form submitted successfully!"); // Alerts the user that the form has been submitted successfully
+    }
+    else {
+        alert("Please enter valid name and email.");
+    }
 });
 
